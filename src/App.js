@@ -1,15 +1,26 @@
+import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
+import ProductPage from './components/ProductPage';
 import Products from './components/Products';
 
 function App() {
+  let history=useHistory()
+
+  function handleNavigate(to){
+    history.push(to)
+  }
   return (
     <div className="App">
-      <div className='container'>
-        <img src='' alt=''/>
-        <h2>Exotic Furniture</h2>
-        <p>Choose from a pool of well-crafted & stylish premium sets online</p>
-      </div>
-    <Products/>
+      <Switch>
+        <Route to="/products">
+          <ProductPage/>
+        </Route>
+        {/* add your Route here */}
+        <Route exact to='/'>
+          {/* add a button here with #handleNavigate passing the route */}
+        <button onClick={()=>handleNavigate('/products')}>product</button>
+        </Route>
+      </Switch>
     </div>
   );
 }
