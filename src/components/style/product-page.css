@@ -8,7 +8,8 @@
     padding: 20px;
 }
 .product-details{
-    text-align: left;
+    justify-content: center;
+    /* text-align: left; */
     background: #F0F2F9;
     padding: 20px;
 }
@@ -53,4 +54,11 @@
 }
 .reviews{
     display: flex;
+}
+#star{
+    fill: #FF9C3B;
+    margin-top: -2px;
+}
+.product-details .content{
+    text-align: left;
 }
