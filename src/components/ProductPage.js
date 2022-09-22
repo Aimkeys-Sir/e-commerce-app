@@ -1,9 +1,11 @@
-import './style/product-page.css'
+import ProductDetails from "./ProductDetails";
+import ProductImage from "./ProductImage";
 
 export default function ProductPage(){
     return (
-        <div>
-            
+        <div className="product-page">
+            <ProductImage/>
+            <ProductDetails/>
         </div>
     )
 }
