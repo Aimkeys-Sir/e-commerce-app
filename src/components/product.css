@@ -1,0 +1,23 @@
+.product_description{
+    text-align: left;
+    padding: 20px;
+    margin: 5px;
+}
+.category{
+    font-weight: 100;
+}
+button{
+    text-align: center;
+    padding: 15px;
+    margin: 7px;
+    border-radius: 10px;
+    width: 150px;
+    
+}
+#cart{
+    background-color: azure;
+}
+#buy{
+    background-color: black;
+    color: white;
+}
