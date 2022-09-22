@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
+import ProductPage from './components/ProductPage';
 
 function App() {
+  let history=useHistory()
+
+  function handleNavigate(to){
+    history.push(to)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route to="/products">
+          <ProductPage/>
+        </Route>
+        {/* add your Route here */}
+        <Route exact to='/'>
+          {/* add a button here with #handleNavigate passing the route */}
+        <button onClick={()=>handleNavigate('/products')}>product</button>
+        </Route>
+      </Switch>
     </div>
   );
 }
