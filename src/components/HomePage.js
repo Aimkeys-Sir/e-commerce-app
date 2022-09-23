@@ -1,9 +1,25 @@
-import React from 'react'
+import React  from "react";
+import ProductCard from "./ProductCard";
+ 
+function Home({productList,setProductList}) {
 
-const HomePage = () => {
+  let products = productList.map((product) => (
+    <ProductCard
+      image_url={product.image_url}
+      productName={product.product_name}
+      productId={product.id}
+      key={product.id}
+      setProductList={setProductList}
+      productList={productList}
+    />
+  ))
+  
   return (
-    <div>HomePage</div>
+   
+    <div className="container">
+      <div className="row">{products}</div>
+      </div>
+    
   )
 }
-
-export default HomePage
+export default Home;
