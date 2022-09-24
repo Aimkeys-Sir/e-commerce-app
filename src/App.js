@@ -1,6 +1,7 @@
 import { Route, useState, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import ProductPage from './components/ProductPage';
+import SignIn from './components/SignIn'
 
 function App() {
   let history=useHistory()
@@ -36,7 +37,14 @@ function App() {
         <button onClick={()=>handleNavigate('/products')}>product</button>
         </Route>
       </Switch>
-      
+      {(user.email != "") ? (
+        <div className="welcome">
+          <h2>Welcome, <span>{user.name}</span></h2>
+          <button>Signout</button>
+          </div>
+      ): (
+        <SignIn />
+      )}
     </div>
   );
 }
