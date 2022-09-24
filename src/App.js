@@ -1,4 +1,4 @@
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, useState, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import ProductPage from './components/ProductPage';
 
@@ -7,6 +7,22 @@ function App() {
 
   function handleNavigate(to){
     history.push(to)
+
+    const adminuser = {
+      email: "admin@admin.com",
+      password: "admin254"
+    }
+
+    const [user, setUser] = useState({name: "", email: ""});
+    const [error, setError] = useState("");
+
+    const Signin = details => {
+      console.log(details);
+    }
+
+    const Signout = () => {
+      console.log("Signout");
+    }
   }
   return (
     <div className="App">
@@ -20,6 +36,7 @@ function App() {
         <button onClick={()=>handleNavigate('/products')}>product</button>
         </Route>
       </Switch>
+      
     </div>
   );
 }
